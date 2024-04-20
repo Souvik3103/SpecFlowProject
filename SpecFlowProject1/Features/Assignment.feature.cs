@@ -74,12 +74,14 @@ namespace SpecFlowProject1.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("To Check")]
-        public virtual void ToCheck()
+        [NUnit.Framework.DescriptionAttribute("To_Verify_Product_Search_and_Add_to_Cart_Functionality")]
+        [NUnit.Framework.TestCaseAttribute("TP-Link TL-WR820N 300 Mbps Single_Band Speed Wireless WiFi Router", null)]
+        public virtual void To_Verify_Product_Search_And_Add_To_Cart_Functionality(string product_Name, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("To Check", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("Product_Name", product_Name);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("To_Verify_Product_Search_and_Add_to_Cart_Functionality", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -104,18 +106,22 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("User Opens Amazon Home Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
-testRunner.When("User Searches for TP-Link TL-WR820N 300 Mbps Single_Band Speed Wireless WiFi Rout" +
-                        "er", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("User Searches for {0}", product_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
 testRunner.Then("User is displayed the search result", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
-testRunner.When("User Selects the item TP-Link TL-WR820N 300 Mbps Single_Band Speed Wireless WiFi " +
-                        "Router from search page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When(string.Format("User Selects the item {0} from search page", product_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
 testRunner.Then("User Checks the price and adds the product to cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 10
+testRunner.When("User navigates to the Cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 11
+testRunner.Then(string.Format("User Verifies the {0} and price", product_Name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

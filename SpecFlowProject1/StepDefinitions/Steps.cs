@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using SpecFlowProject1.Helpers;
+using SpecFlowProject1.WebAutomation.PageObjects.Cart;
 using SpecFlowProject1.WebAutomation.PageObjects.Home;
 using SpecFlowProject1.WebAutomation.PageObjects.Product;
 using System.Diagnostics;
@@ -16,6 +17,7 @@ namespace SpecFlowProject1.StepDefinitions
         private static HomePage myHomePage;
         private static SearchPage mySearchPage;
         private static ProductPage myProductPage;
+        private static CartPage myCartPage;
         static string selectedBrowser;
         private string productPrice;
         private string productName;
@@ -58,6 +60,24 @@ namespace SpecFlowProject1.StepDefinitions
             Assert.IsTrue(myProductPage.AddToCartSuccessful(), "Item Could not be added to cart");
         }
 
+        [When(@"User navigates to the Cart")]
+        public void WhenUserNavigatesToTheCart()
+        {
+            myCartPage.NavigateToCart();
+        }
+
+        [Then(@"User Verifies the (.*) and price")]
+        public void ThenUserVerifiesTheProductNameAndPrice(string productName)
+        {
+            Tuple<string, float> productPricePair = myCartPage.VerifyCartItem(productName);
+            Assert.That(productPricePair.Item1.Contains(this.productName), $"Product Name in Cart {productPricePair.Item1} is not equal to Expected Price {this.productName}");
+            var expectedPrice = float.Parse(productPrice);
+            Assert.IsTrue(productPricePair.Item2 == expectedPrice, $"Product Price in Cart {productPricePair.Item2} is not equal to Expected Price {expectedPrice}");
+        }
+
+
+
+
 
 
 
@@ -91,6 +111,7 @@ namespace SpecFlowProject1.StepDefinitions
             myHomePage = new HomePage(webDriver, systemUnderTest.AppUrl);
             mySearchPage = new SearchPage(webDriver);
             myProductPage = new ProductPage(webDriver);
+            myCartPage = new CartPage(webDriver);
             myHomePage.NavigateToHomePage();
 
         }
