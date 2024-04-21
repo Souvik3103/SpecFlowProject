@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpecFlowProject1", "SpecFlowProject1\SpecFlowProject1.csproj", "{750B179C-37A4-4184-AD9C-9DCB43857951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpecFlowProject1", "SpecFlowProject1\SpecFlowProject1.csproj", "{750B179C-37A4-4184-AD9C-9DCB43857951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestSharpAPIProject", "RestSharpAPIProject\RestSharpAPIProject.csproj", "{83EBBB69-648E-460C-B4E3-41C1265F699D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{750B179C-37A4-4184-AD9C-9DCB43857951}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{750B179C-37A4-4184-AD9C-9DCB43857951}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{750B179C-37A4-4184-AD9C-9DCB43857951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EBBB69-648E-460C-B4E3-41C1265F699D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EBBB69-648E-460C-B4E3-41C1265F699D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EBBB69-648E-460C-B4E3-41C1265F699D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EBBB69-648E-460C-B4E3-41C1265F699D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
