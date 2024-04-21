@@ -2,7 +2,6 @@
 
 A short summary of the feature
 
-@tag1
 Scenario: Status Test
 	Given User creates a request with endpoint "books"
 	Then User Checks the status to be "OK"
